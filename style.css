@@ -1,0 +1,134 @@
+/* Paleta de colores Windows 98 Contraste */
+:root {
+    --win98-bg: #000000; 
+    --win98-blue: #000080; 
+    --win98-dark: #808080; 
+    --win98-light: #FFFFFF; 
+    --win98-accent: #008080; 
+    --font-system: 'Roboto Mono', 'Lucida Console', monospace; 
+}
+
+/* Configuraciones generales */
+body {
+    font-family: var(--font-system); 
+    color: var(--win98-light); 
+    margin: 0;
+    padding: 0;
+    background-color: #000000; /* Escritorio negro puro */
+}
+
+/* Contenedor del lienzo de p5 (para el fondo) */
+#p5-canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; 
+    pointer-events: none;
+}
+
+/* Contenedor principal de las bases simulando una ventana */
+#bases-container {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 10px;
+    
+    /* CAMBIO CRÍTICO: Fondo negro con 3% de transparencia */
+    background: rgba(0, 0, 0, 0.05);
+    
+    /* Bordes 3D */
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--win98-dark) var(--win98-light) var(--win98-light) var(--win98-dark); 
+    box-shadow: 1px 1px 0 var(--win98-dark), -1px -1px 0 var(--win98-light);
+}
+
+/* Barra de Título (simulada con el header) */
+header {
+    background-color: #00FF00; /* Verde de alto contraste */
+    color: #000000;
+    padding: 3px 6px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    border-bottom: 1px solid var(--win98-dark);
+}
+
+.title, .subtitle {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+.title {
+    font-size: 18px; 
+}
+.subtitle {
+    font-size: 14px;
+    font-weight: normal;
+    color: #00FF00; /* Color de contraste */
+}
+
+
+/* Estilo de Contenido de Ventana */
+#bases-container section {
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--win98-dark) var(--win98-light) var(--win98-light) var(--win98-dark);
+    margin-bottom: 15px;
+    
+    /* CAMBIO CRÍTICO: Fondo de sección con 3% de transparencia */
+    background: rgba(0, 0, 0, 0.50); 
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFFFFF;
+    border-bottom: 2px solid var(--win98-dark); 
+    padding-bottom: 5px;
+}
+
+#bases-container p, #bases-container li {
+    font-size: 16px; 
+    line-height: 1.5;
+    color: #FFFFFF; /* Texto blanco/claro */
+}
+
+/* Botón y Link de Postulación */
+.cta-link a {
+    display: inline-block;
+    padding: 4px 12px;
+    text-decoration: none;
+    background-color: var(--win98-bg);
+    color: #00FF00; /* Texto de botón en verde de contraste */
+    font-weight: bold;
+    
+    /* Efecto 3D */
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--win98-light) var(--win98-dark) var(--win98-dark) var(--win98-light);
+    box-shadow: 1px 1px 0 var(--win98-dark);
+}
+
+.cta-link a:active {
+    border-color: var(--win98-dark) var(--win98-light) var(--win98-light) var(--win98-dark);
+    box-shadow: none;
+    transform: translate(1px, 1px);
+}
+
+.fecha-limite {
+    color: #FF00FF; /* Magenta de alto contraste para destacar */
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Media Query para hacerlo responsivo */
+@media (max-width: 768px) {
+    #bases-container {
+        margin: 10px;
+        max-width: none;
+    }
+}
