@@ -1,0 +1,94 @@
+:root {
+    --win98-bg: #669933; 
+    --font-system: 'Roboto Mono', 'Lucida Console', monospace; 
+}
+
+body {
+    font-family: var(--font-system);
+    margin: 0;
+    padding: 0;
+    background-color: var(--win98-bg);
+    overflow: hidden; /* Evita scroll en el home */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#p5-canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#portal-container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 50px;
+}
+
+.title {
+    font-size: 42px;
+    font-weight: bold;
+    color: #000000;
+    margin: 0;
+    letter-spacing: 4px;
+}
+
+/* --- CUADRO PARA EL SUBTÍTULO --- */
+.subtitle-box {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.7); /* Transparencia equilibrada */
+    padding: 8px 15px;
+    margin-top: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px); /* Difumina suavemente los puntos al pasar */
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #FFFFFF; /* Cambiado a blanco para legibilidad en el cuadro */
+    margin: 0;
+    font-weight: normal;
+}
+/* -------------------------------- */
+
+.button-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.portal-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 14px;
+    border: 1px solid #000000;
+    transition: all 0.2s ease;
+}
+
+.portal-btn:hover {
+    background-color: transparent;
+    color: #000000;
+    transform: translateY(-2px);
+}
+
+/* Responsivo para móviles */
+@media (max-width: 600px) {
+    .button-group {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+    .title {
+        font-size: 32px;
+    }
+}
